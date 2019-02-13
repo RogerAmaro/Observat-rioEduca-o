@@ -433,7 +433,7 @@
 	#page
 	{
 		padding: 2em 0em 5em 0em;
-		text-align: center;
+		/*text-align: center;*/
 	}
 	
 	#page .button
@@ -443,9 +443,22 @@
 		text-align: center;
 	}
 	#page .h2{
-		text-align: left;
+		float: left;
+		padding: 10px;
 
 
+
+	}
+	#page .p{
+		line-height: 1.2;
+		padding: 30px;
+		text-align: justify;
+
+	}
+	#tabela .img {
+		background-color: #f2eded;
+		border: 1px solid #ccc;
+		left: 25%;
 
 	}
 /*********************************************************************************/
