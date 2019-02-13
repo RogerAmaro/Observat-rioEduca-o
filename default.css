@@ -398,7 +398,7 @@
 	{
 		overflow: hidden;
 		padding: 10em 0em;
-		background: url(images/banner_floripa.jpg) no-repeat center;
+		background: url(images/banner_final.svg) no-repeat center;
 		background-size: cover;
 		text-align: center;
 		color: rgba(255,255,255,.8);
@@ -449,18 +449,30 @@
 
 
 	}
-	#page .p{
+	#page p{
 		line-height: 1.2;
 		padding: 30px;
 		text-align: justify;
+		text-indent: 4em;
+	}
+	.population-img {
+	
+	
+		/*position: relative;
+		left: 10%;*/
+		text-align: center;
+		margin: auto;
 
 	}
-	#tabela .img {
-		background-color: #f2eded;
-		border: 1px solid #ccc;
-		left: 25%;
 
-	}
+
+	
+		
+
+
+
+
+	
 /*********************************************************************************/
 /* Content                                                                       */
 /*********************************************************************************/
