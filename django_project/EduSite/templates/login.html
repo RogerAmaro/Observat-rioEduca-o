@@ -9,10 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pagina de login</title>
-    <link href="{% static 'default.css' %}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{% static 'fonts.css' %}" rel="stylesheet" type="text/css" media="all" />   
+    
 </head>
 <body>
-    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Logar' />
+    </form>
 </body>
 </html>
