@@ -130,9 +130,6 @@
 	}
 	#login_profile {
 		text-align: right;
-
-
-
 	}
 
 /*********************************************************************************/
@@ -370,7 +367,7 @@
 	}
 	#menu .login_profile{
 		position: relative;
-		left: 400px;
+		left: 150px;
 		
 
 

@@ -1,4 +1,4 @@
-#!/home/lab-pesquisa/Desktop/Observat-rioEduca-o/django_project/env/bin/python3
+#!/home/lab-pesquisa/Desktop/projetos/Observat-rioEduca-o/django_project/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

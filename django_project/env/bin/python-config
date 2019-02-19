@@ -1,4 +1,4 @@
-#!/home/lab-pesquisa/Desktop/Observat-rioEduca-o/django_project/env/bin/python
+#!/home/lab-pesquisa/Desktop/projetos/Observat-rioEduca-o/django_project/env/bin/python
 
 import sys
 import getopt
