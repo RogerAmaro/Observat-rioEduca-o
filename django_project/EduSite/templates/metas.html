@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+<link href="{% static 'index.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="index.html">Observatório</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+                <li><a href="#" accesskey="1" title="">Início</a></li>
+                <li><a href="#" accesskey="2" title="">Sobre</a></li>
+                <li><a href="#page" accesskey="3" title="">Diagnóstico Educacional</a></li>
+                <li class="current_page_item"><a href="#" accesskey="4" title="">Metas e estratégias</a></li>
+			</ul>
+			
+		</div>
+		
+    </div>
+    
+	<div id="featured">
+        <div id='linha' >
+            <a href="#" accesskey="5" title="">Meta 1</a>
+            <a href="#" accesskey="6" title="">Meta 2</a>
+            <a href="#" accesskey="7" title="">Meta 3</a>
+            <a href="#" accesskey="8" title="">Meta 4</a>
+            <a href="#" accesskey="5" title="">Meta 5</a>
+            <a href="#" accesskey="6" title="">Meta 6</a>
+            <a href="#" accesskey="7" title="">Meta 7</a>
+            <a href="#" accesskey="8" title="">Meta 8</a>
+            <a href="#" accesskey="5" title="">Meta 9</a>
+            <a href="#" accesskey="6" title="">Meta 10</a>
+            <a href="#" accesskey="7" title="">Meta 11</a>
+            <a href="#" accesskey="8" title="">Meta 12</a>
+            <a href="#" accesskey="5" title="">Meta 13</a>
+            <a href="#" accesskey="6" title="">Meta 14</a>
+            <a href="#" accesskey="7" title="">Meta 15</a>
+            <a href="#" accesskey="8" title="">Meta 16</a>
+            <a href="#" accesskey="5" title="">Meta 17</a>
+            <a href="#" accesskey="6" title="">Meta 18</a>
+            <a href="#" accesskey="7" title="">Meta 19</a>
+            <a href="#" accesskey="8" title="">Meta 20</a>
+        </div>
+    <div id='extra' class='container'>
+
+    </div>
+
+
+
+
+
+
+	
+		
+	
+</div>
+
+<div id='grafico_meta1'>
+        {% block extrahead %}
+
+            <canvas id="myChart" width="500" height="300" class="line-chart"></canvas>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                
+            <script>
+                var ctx = document.getElementsByClassName("line-chart")
+                var chartGraph = new Chart(ctx, {
+                    type:'bar',
+                    data : {
+                        labels:['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+                        datasets: [{
+                            label:"Metas Previstas",
+                            data:[{% for i in meta_prevista %}{{ i }},{% endfor %}],
+                            borderWidth: 1,
+                            borderColor: 'rgba(77,166,253,0,85',
+                            backgroundColor:'blue',
+        
+                        },
+                        {
+                            label:"Metas executadas",
+                            data:[{% for i in meta_executada %}{{ i }},{% endfor %}],
+                            borderWidth: 1,
+                            borderColor: 'rgba(6,204,6,0,85',
+                            backgroundColor:'black',
+        
+                        }]
+                    },
+                    options:{
+                        title:{
+                            display:true,
+                            fontsize:20,
+                            text: 'Relatório de CTR Anual'
+                        },
+                        labels:{
+                            fontstyle: 'bold'
+                        }
+                    }
+                })
+        
+            
+            </script>
+        
+            
+            <script src="" async defer></script>
+        {% endblock %}
+</div>
+
+</body>
+</html>

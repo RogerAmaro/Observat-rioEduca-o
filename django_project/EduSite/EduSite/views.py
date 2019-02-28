@@ -1,25 +1,29 @@
 
-# from django.shortcuts import render, render_to_response
-# from django.http import HttpResponse, HttpResponseRedirect
-# from django.contrib import messages
-# from django.contrib.auth import authenticate, login
-# from .forms import LoginForm
-# # Create your views here.
-# from django.contrib.auth.forms import UserCreationForm # Formulario de criacao de usuarios
-# from django.contrib.auth.forms import AuthenticationForm # Formulario de autenticacao de usuarios
-# from django.contrib.auth import login 
-# from django.shortcuts import render
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
+from .forms import LoginForm
+# Create your views here.
+from django.contrib.auth.forms import UserCreationForm # Formulario de criacao de usuarios
+from django.contrib.auth.forms import AuthenticationForm # Formulario de autenticacao de usuarios
+from django.contrib.auth import login 
+from django.shortcuts import render
 
 import pandas as pd
 import numpy as np
 
-# def inicio(request):
-#     return render(request,"index.html")
+def inicio(request):
+    return render(request,"index.html")
 
 
-xls = pd.ExcelFile("/home/lab-pesquisa/Desktop/projetos/graficos_planilha/Ficha de Monitoramento e Avaliação dos PMEs 2018_final.xls") #### lembras de trocar pelo arquivo django
 
-    
+def metas(request):
+    xls = pd.ExcelFile("/home/lab-pesquisa/Desktop/projetos/graficos_planilha/Ficha de Monitoramento e Avaliação dos PMEs 2018_final.xls")
+    metas = Meta(xls, 'Meta 1').I_A
+    prevista = metas[0]
+    executada =  metas[1]
+    return render(request,"metas.html", {'meta_prevista':prevista,'meta_executada':executada})
 
 
 class Meta:
@@ -42,17 +46,13 @@ class Meta:
             if np.isnan(i):
                 meta_executada[meta_executada.index(i)]=0
     
-        meta_executada = [ x*100 for x in meta_executada]
-        meta_prevista = [ x*100 for x in meta_prevista]
+        meta_executada = [ round(x,2) for x in meta_executada]
+        meta_prevista = [  round(x,2) for x in meta_prevista]
         return [meta_prevista,meta_executada]
 
     
 
-#metas = Meta(xls,'Meta 20')
-#print(metas.indicador(metas.I_XA[0],metas.I_XA[1]))
-# print(metas.I_A)
 
-print(Meta(xls,'Meta 7').I_C)
 
       
     

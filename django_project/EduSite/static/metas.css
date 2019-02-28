@@ -1,0 +1,43 @@
+
+#grafico_meta1{
+    width: auto;
+    height: auto;
+}
+html, body
+	{
+		height: 100%;
+	}
+	
+	body
+	{
+		margin: 0px;
+		padding: 0px;
+		background:#3366ff ;/*#79C255;*/
+		font-family: 'Montserrat', sans-serif;
+		font-size: 11pt;
+		font-weight: 200;
+		color: #656565;
+	}
+	
+	
+	h1, h2, h3
+	{
+		margin: 0;
+		padding: 0;
+		font-weight: 700;
+		color: #2B3F48;
+	}
+	
+}
+
+
+#linha {
+    margin:0px auto;
+
+}
+#linha li {
+    Position: relative;
+    display:inline;
+    font-weight: 100;
+    font-size: medium;
+}
