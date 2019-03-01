@@ -30,14 +30,20 @@ html, body
 	
 }
 
+#featured{
 
+	text-decoration:none;
+
+}
 #linha {
     margin:0px auto;
 
 }
-#linha li {
+#linha a:link{
     Position: relative;
     display:inline;
     font-weight: 100;
-    font-size: medium;
+	font-size: medium;
+	text-decoration:none;
 }
+

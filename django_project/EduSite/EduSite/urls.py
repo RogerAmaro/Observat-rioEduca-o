@@ -21,7 +21,7 @@ from django.conf.urls import url
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', inicio),
-    path('metas/', metas),
+    path('inicio/', inicio, name='inicio'),
+    path('metas/', metas, name='metas'),
 
 ]
