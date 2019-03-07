@@ -12,6 +12,8 @@
 <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
 <link href="{% static 'index.css' %}" rel="stylesheet" type="text/css" media="all" />
 <link href="{% static 'fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'metas.css' %}" rel="stylesheet" type="text/css" media="all" />
+
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -35,7 +37,7 @@
     </div>
     
 	<div id="featured">
-        <div id='linha' >
+        <div class='linha' >
             <a href="#" accesskey="5" title="">Meta 1</a>
             <a href="#" accesskey="6" title="">Meta 2</a>
             <a href="#" accesskey="7" title="">Meta 3</a>
@@ -57,69 +59,104 @@
             <a href="#" accesskey="7" title="">Meta 19</a>
             <a href="#" accesskey="8" title="">Meta 20</a>
         </div>
-    <div id='extra' class='container'>
+	</div>
 
+
+</div>
+   
+    
+<div id='wrapper'>
+    <div class="meta">
+        <br><h1 id='title'>Meta 1</h1>
+        <div id='text'>
+            <p >
+            <br>Universalizar, até 2016, a Educação Infantil na pré-escola para as crianças de 04 (quatro) a 05 (cinco) anos de idade e ampliar a oferta de Educação Infantil em creches, de forma a atender no mínimo 65% (sessenta e cinco por cento) das crianças de até 03 (três) anos, até o final da vigência deste documento, em consonância com o PNE.
+            </p>
+           
+        </div>
+        
     </div>
 
+    <div class="grafico">
+            {% block extrahead %}
 
-
-
-
-
-	
-		
-	
-</div>
-
-<div id='grafico_meta1'>
-        {% block extrahead %}
-
-            <canvas id="myChart" width="500" height="300" class="line-chart"></canvas>
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-                
+            <canvas id="myChart" width="250" height="150" class="line-chart"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>      
             <script>
                 var ctx = document.getElementsByClassName("line-chart")
+               
                 var chartGraph = new Chart(ctx, {
                     type:'bar',
                     data : {
                         labels:['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
                         datasets: [{
                             label:"Metas Previstas",
-                            data:[{% for i in meta_prevista %}{{ i }},{% endfor %}],
+                            data:[{% for i  in meta_prevista %}{{i}},{% endfor %}],
                             borderWidth: 1,
                             borderColor: 'rgba(77,166,253,0,85',
-                            backgroundColor:'blue',
-        
+                            backgroundColor:'gray',
+            
                         },
                         {
                             label:"Metas executadas",
-                            data:[{% for i in meta_executada %}{{ i }},{% endfor %}],
+                            data:[{% for i in meta_executada %}{{i}},{% endfor %}],
                             borderWidth: 1,
                             borderColor: 'rgba(6,204,6,0,85',
-                            backgroundColor:'black',
-        
+                            backgroundColor:"#79D1CF",
+            
                         }]
                     },
                     options:{
                         title:{
                             display:true,
-                            fontsize:20,
-                            text: 'Relatório de CTR Anual'
+                            fontsize:30,
+                            text: 'META 1'
                         },
                         labels:{
                             fontstyle: 'bold'
                         }
                     }
                 })
-        
             
+                
             </script>
-        
             
+                
             <script src="" async defer></script>
         {% endblock %}
+    </div>
+    <div class='lista'>
+        <li>Definir, em regime de colaboração entre a União, os estados, o Distrito Federal e os Municípios, metas de expansão das respectivas redes públicas de educação infantil segundo padrão nacional de qualidade, considerando as peculiaridades locais.</li>
+        <li>Expandir a oferta de vagas na educação infantil municipal mediante a ampliação e reforma das unidades educativas e a construção de novas unidades públicas, em conformidade com os padrões de qualidade nacional e municipal, assegurando a acessibilidade, as especificidades geográficas e cultura local, espaços físicos externos arborizados que garantam o desenvolvimento integral das crianças.</li>
+        <li>Garantir as especificidades da Educação infantil na organização das redes escolares do Sistema de Ensino Municipal, conforme critérios estabelecidos nas Resoluções do Conselho Municipal de Educação, em permanente diálogo com os profissionais das unidades educativas da rede municipal de ensino.</li>
+        <li> Realizar, periodicamente, em regime de colaboração com a Secretaria de Saúde e de Assistência Social, levantamento da demanda por creche para a população de até 3 (três) anos, como forma de planejar a oferta e verificar o atendimento da demanda manifesta.</li>
+        <li>As matrículas e os cadastros das crianças de 0 a 3 anos serão realizados periodicamente e as crianças serão classificadas em lista de espera até o atendimento. Os critérios serão estabelecidos pela Secretaria Municipal da Educação.</li>
+        <li>Estabelecer, no primeiro ano de vigência do Plano, normas, procedimentos e prazos para a definição de mecanismos de consulta pública da demanda das famílias por creches.</li>
+        <li>Articular a oferta de matrículas gratuitas com as Instituições privadas sem fins econômicos, conveniadas com a Secretaria de Educação, e que atendam os indicadores de qualidade e as orientações da supervisão.</li>
+        <li>Garantir a matrícula de toda a população, interessada na escola pública, de 04 (quatro) a 17 (dezessete) anos com deficiência, transtornos globais do desenvolvimento e altas habilidades ou superdotação</li>
+        <li> Fortalecer o acompanhamento e o monitoramento do acesso, da permanência e freqüência das crianças da educação infantil, em especial dos beneficiários de programas de transferência de renda, como bolsa família, em colaboração com as famílias e com os órgãos públicos de assistência social, saúde e proteção à infância e adolescência, identificando as causas de absenteísmo</li>
+        <li>Promover em parceria com órgãos públicos municipais e estaduais de assistência social, saúde e proteção à infância e adolescência, para busca ativa de crianças da educação infantil que se encontram fora da escola, preservando o direito de opção da família em relação às crianças de até 3 (três) anos, monitorando as ausências por meio de gerenciamento de dados eletrônicos.</li>
+        <li>Ampliar, gradativamente, nas Unidades de educação infantil, o atendimento em tempo integral, para as crianças de 0 (zero) a 5 (cinco) anos, conforme estabelecido nas Diretrizes Curriculares Nacionais para a Educação infantil.</li>
+        <li>Ampliar os recursos humanos especializados, objetivando a expansão e à melhoria do atendimento nas Unidades Educativas, a fim de fomentar a eficiência da qualidade no atendimento à infância.</li>
+        <li> Ampliar a aquisição de materiais didático-pedagógicos, equipamentos e mobiliários adequados, a fim de garantir a qualidade da educação infantil.</li>
+        <li>Promover políticas intersetoriais para a Infância, por meio de ações de prevenção, promoção, atenção à saúde, à assistência, à cultura, ao lazer e à justiça através da articulação entre os órgãos responsáveis, viabilizando uma Educação infantil Pública de qualidade socialmente referenciada.</li>
+        <li> Deverão as Instituições de educação Infantil elaborar suas propostas pedagógicas com o objetivo de garantir à criança acesso a processos de apropriação, renovação e articulação de conhecimentos e aprendizagens de diferentes linguagens, assim como o direito à proteção, à saúde, à liberdade, à confiança, à diversidade cultural e étnico-racial, ao respeito, à dignidade, à brincadeira, à convivência e à interação com outras crianças.​</li>
+        <li>Favorecer a articulação da Educação infantil com o Ensino fundamental, de modo a garantir a continuidade no processo de aprendizagem e desenvolvimento das crianças, respeitando as especificidades etárias, sem antecipação de conteúdos que serão trabalhados no Ensino Fundamental.</li>
+        <li>Implantar, até o segundo ano de vigência deste Plano, a avaliação da Educação infantil, a ser realizadas a cada dois anos, com base em parâmetros nacionais e municipais de qualidade, a fim de aferir a infraestrutura, quadro de pessoal, as condições de gestão, os recursos pedagógicos, além de outros indicadores relevantes, garantindo os direitos conquistados pelos trabalhadores.</li>
+        <li>Assegurar que a avaliação seja realizada mediante acompanhamento e registro do desenvolvimento das crianças, sem o objetivo de promoção, mesmo para o acesso ao ensino fundamental.</li>
+        <li>Promover, a formação continuada dos profissionais que atuam na Educação infantil.</li>
+        <li> Manter sistema de autorização e supervisão da Educação infantil pública e privada, na Secretaria Municipal de Educação, em pareceria com o Conselho Municipal de Educação.</li>
+        <li>Elaborar os parâmetros de qualidade para Educação do município, em até dois anos após a aprovação deste Plano, em permanente diálogo e de acordo com a comunidade educativa.</li>
+    
+    
+    
+    </div>
+
+
+
+        
 </div>
+
 
 </body>
 </html>

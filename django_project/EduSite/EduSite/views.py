@@ -19,7 +19,7 @@ def inicio(request):
 
 
 def metas(request):
-    xls = pd.ExcelFile("/home/lab-pesquisa/Desktop/projetos/graficos_planilha/Ficha de Monitoramento e Avaliação dos PMEs 2018_final.xls")
+    xls = pd.ExcelFile("static/files/Ficha_de_Monitoramento_e_Avaliação_dos_PMEs_2018_final.xls")
     metas = Meta(xls, 'Meta 1').I_A
     prevista = metas[0]
     executada =  metas[1]
