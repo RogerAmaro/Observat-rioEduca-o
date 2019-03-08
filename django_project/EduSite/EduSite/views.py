@@ -1,10 +1,10 @@
+from collections import OrderedDict
 
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm
-# Create your views here.
 from django.contrib.auth.forms import UserCreationForm # Formulario de criacao de usuarios
 from django.contrib.auth.forms import AuthenticationForm # Formulario de autenticacao de usuarios
 from django.contrib.auth import login 
@@ -20,16 +20,17 @@ def inicio(request):
 
 def metas(request):
     xls = pd.ExcelFile("static/files/Ficha_de_Monitoramento_e_Avaliação_dos_PMEs_2018_final.xls")
+    #xls = pd.ExcelFile("/home/lab-pesquisa/Desktop/projetos/Observat-rioEduca-o/django_project/EduSite/static/files/Ficha_de_Monitoramento_e_Avaliação_dos_PMEs_2018_final.xls")
     metas = Meta(xls, 'Meta 1').I_A
     prevista = metas[0]
     executada =  metas[1]
+    dataSource = OrderedDict()
     return render(request,"metas.html", {'meta_prevista':prevista,'meta_executada':executada})
 
 
 class Meta:
     def __init__(self,xls_file,sheet_name):
         self.df1 = pd.read_excel(xls_file,sheet_name) 
-        self.years = ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'] 
         self.I_A = self.indicador(14,15)
         self.I_B = self.indicador(19,20)                     
         self.I_C = self.indicador(24,25) 
@@ -54,5 +55,4 @@ class Meta:
 
 
 
-      
-    
+
